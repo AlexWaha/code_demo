@@ -31,6 +31,7 @@
         </main>
         @include('layout.footer')
     </div>
+        @yield('scripts')
 </div>
 </body>
 </html>

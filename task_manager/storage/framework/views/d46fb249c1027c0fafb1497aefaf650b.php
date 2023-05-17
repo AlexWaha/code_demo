@@ -31,6 +31,7 @@
         </main>
         <?php echo $__env->make('layout.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </div>
+        <?php echo $__env->yieldContent('scripts'); ?>
 </div>
 </body>
 </html>

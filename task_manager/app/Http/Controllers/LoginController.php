@@ -5,6 +5,7 @@
     use App\Http\Requests\LoginRequest;
     use Illuminate\Contracts\View\View;
     use Illuminate\Http\RedirectResponse;
+    use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
     use Session;
 
@@ -15,10 +16,9 @@
         public function index() {
             if (Auth::check()) {
                 return redirect()->route('dashboard');
-            } else {
-                Auth::logout();
-                return view('login');
             }
+
+            return view('login');
         }
 
         /**
@@ -30,6 +30,8 @@
             $validated = $request->validated();
 
             if (Auth::attempt($validated)) {
+                $request->session()->regenerate();
+
                 Session::flash('alert-warning', 'Signed in');
                 return redirect()->route('dashboard');
             }
@@ -39,9 +41,13 @@
             return redirect("auth");
         }
 
-        public function logout() {
-            Session::flush();
+        public function logout(Request $request): RedirectResponse {
             Auth::logout();
+
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
+
             return redirect('auth');
         }
     }

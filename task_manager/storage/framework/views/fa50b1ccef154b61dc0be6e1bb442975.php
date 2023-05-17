@@ -4,12 +4,10 @@
 <?php $__env->startSection('header', 'Dashboard Login'); ?>
 
 <?php $__env->startSection('content'); ?>
-
     <div class="row justify-content-sm-center">
         <div class="col-sm-6 col-md-6 col-lg-4">
             <?php echo $__env->make('layout.flash', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <?php echo $__env->make('layout.error', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
             <div class="card">
                 <div class="card-header"><i class="fa-solid fa-lock"></i> Login</div>
                 <div class="card-body">

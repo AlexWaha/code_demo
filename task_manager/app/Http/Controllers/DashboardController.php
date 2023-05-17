@@ -2,8 +2,12 @@
 
     namespace App\Http\Controllers;
 
+    use App\Models\Project;
+
     class DashboardController extends Controller {
         public function index() {
-            return view('dashboard');
+            $projects = Project::with('tasks')->orderBy('title')->take(10)->get();
+
+            return view('dashboard', compact('projects'));
         }
     }

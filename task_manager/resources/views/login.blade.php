@@ -6,12 +6,10 @@
 @section('header', 'Dashboard Login')
 
 @section('content')
-
     <div class="row justify-content-sm-center">
         <div class="col-sm-6 col-md-6 col-lg-4">
             @include('layout.flash')
             @include('layout.error')
-
             <div class="card">
                 <div class="card-header"><i class="fa-solid fa-lock"></i> Login</div>
                 <div class="card-body">

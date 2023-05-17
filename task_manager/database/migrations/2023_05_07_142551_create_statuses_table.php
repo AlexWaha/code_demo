@@ -8,7 +8,7 @@
         public function up() {
             Schema::create('statuses', function (Blueprint $table) {
                 $table->id()->index();
-                $table->string('title')->fullText();
+                $table->string('name')->fullText();
                 $table->softDeletes();
                 $table->timestamps();
             });

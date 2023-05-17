@@ -32,6 +32,10 @@ a {
     text-decoration: none
 }
 
+.alert ul {
+    margin: 0;
+    padding: 0 2rem;
+}
 
 .login_container .app_right_container {
     background: linear-gradient(to right, #606c88 0%, #3f4c6b 51%, #606c88 100%);
@@ -495,4 +499,8 @@ div.required .col-form-label:not(span):before, td.required:before {
 
 td {
     position: relative
+}
+
+.handle-sortable {
+    cursor: grab;
 }

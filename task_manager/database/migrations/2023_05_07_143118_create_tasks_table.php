@@ -14,7 +14,6 @@
                 $table->text('description')->nullable();
                 $table->tinyInteger('priority')->default(5);
                 $table->unsignedBigInteger('status_id')->default('1')->index();
-                $table->softDeletes();
                 $table->timestamps();
             });
 
